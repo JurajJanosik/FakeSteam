@@ -4,7 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            var games = DataGenerator.GeneratePrices();
+            var fakesteam = new SteamSystem("FakeSteam", games);
+
+
+
         }
     }
 }

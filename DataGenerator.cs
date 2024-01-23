@@ -20,31 +20,30 @@ namespace FakeSteam
 
         public static List<string> Genre { get; set; } = new List<string>()
         {
-         "Anime", "Simulator", "RPG", "FPS","Multiplayer" 
+         "Anime", "Simulator", "RPG", "FPS","Multiplayer"
         };
-        
 
-        public static List<Game> GeneratePrices(int numberOfPrices)
+
+        public static List<Game> GeneratePrices()
         {
 
             var random = new Random();
-            var game = new List<Game>();
+            var games = new List<Game>();
 
-              for (int i = 0; i < Name.Count; i++)
+            for (int i = 0; i < Name.Count; i++)
 
             {
-                var price = random.Next(0,100);
+                var price = random.Next(0, 100);
                 var name = Name[i];
                 var id = Id[i];
-                var Genre = random.Next(0,5);
+                var genre = Genre[random.Next(0, 5)];
 
-
+                var newGame = new Game(id, name, price, DateTime.Now, genre);
+                games.Add(newGame);
             }
 
 
-
-
-
+            return games;
 
 
 
