@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace FakeSteam
-{
+{        
+       
     internal class DataGenerator
     {
+        
 
         public static List<string> Name { get; set; } = new List<string>()
         {
@@ -22,7 +26,7 @@ namespace FakeSteam
         {
          "Anime", "Simulator", "RPG", "FPS","Multiplayer"
         };
-
+        
 
         public static List<Game> GeneratePrices()
         {
@@ -37,8 +41,9 @@ namespace FakeSteam
                 var name = Name[i];
                 var id = Id[i];
                 var genre = Genre[random.Next(0, 5)];
+                var players = random.Next(0, 100000);
 
-                var newGame = new Game(id, name, price, DateTime.Now, genre);
+                var newGame = new Game(id, name, price, DateTime.Now, genre, players);
                 games.Add(newGame);
             }
 

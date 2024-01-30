@@ -1,4 +1,4 @@
-﻿namespace FakeSteam
+﻿ namespace FakeSteam
 {
     internal class Program
     {
@@ -8,6 +8,10 @@
             var games = DataGenerator.GeneratePrices();
             var fakesteam = new SteamSystem("FakeSteam", games);
 
+            foreach (Game game in games)
+            {
+                Console.WriteLine(game);  
+            }
 
 
         }
